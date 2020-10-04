@@ -19,7 +19,7 @@
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <pattern>
-                    <pattern>{"service": "kiworkshopApplication"}</pattern>
+                    <pattern>{"service": "kiworkshop"}</pattern>
                 </pattern>
                 <logLevel/>
                 <timestamp/>
@@ -36,7 +36,7 @@
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <pattern>
-                    <pattern>{"service": "kiworkshopApplication"}</pattern>
+                    <pattern>{"service": "kiworkshop"}</pattern>
                 </pattern>
                 <logLevel/>
                 <timestamp/>
@@ -48,8 +48,7 @@
             </providers>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_PATH}/log_%d{yyyy-MM-dd}.%i.json</FileNamePattern><!-- daily로 rolling함 -->
-            <maxFileSize>5MB</maxFileSize>
+            <FileNamePattern>${LOG_PATH}/log_%d{yyyy-MM-dd}.json</FileNamePattern>
             <maxHistory>30</maxHistory><!-- N일 지난 로그를 오래된 순서로 삭제함 -->
         </rollingPolicy>
     </appender>
